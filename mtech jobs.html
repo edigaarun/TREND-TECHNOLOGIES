@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(236, 230, 219);
+}
+
+.main {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+img{
+    border-radius: 10px;
+  
+}
+
+.job-opportunities {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+h1{
+    color: red;
+}
+h2{
+      text-align: center;
+      color: rgb(18, 247, 98);
+    }
+ 
+
+.main img {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: antiquewhite;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <button class="course-button" id="cse"><img src="job_cse.jfif" alt="main"><h2>CSE</h2></button>
+    <button class="course-button" id="ece"><img src="job_ece.jfif" alt="main"><h2>ece</h2></button>
+    <button class="course-button" id="eee"><img src="job_eee.jfif" alt="main"><h2>EEE</h2></button>
+    <button class="course-button" id="ai-ml"><img src="job_civil.jfif" alt="main"><h2>civil</h2></button>
+</div>
+    <div class="job-opportunities" id="cse-jobs">
+        <!-- Display CSE job opportunities here -->
+       <h1>hello Welcome to cse job opportunities</h1>
+       <p>Job opportunities for individuals with a diploma in Computer Science and Engineering (CSE) can vary based on factors such as location, skills, and industry demand. Common roles could include computer support specialist, web developer, network technician, or software tester. Salaries will also vary depending on these factors and your experience level, but entry-level positions might range from $30,000 to $50,000 annually, with potential for growth as you gain experience and skills. Keep in mind that the job market and salary ranges can change over time, so it's always a good idea to research current trends and job listings in your area.
+  <p> 
+<h1>Computer Support Specialist</h1>: Providing technical assistance to users and organizations. 
+<P>Salary range</P>: $35,000 - $55,000.
+
+<h1>Web Developer</h1>: Building and maintaining websites.
+ <p>Salary range</p>: $40,000 - $70,000.
+
+<h1>Network Technician</h1>: Setting up and maintaining computer networks.
+<p> Salary range</p>: $40,000 - $60,000.
+
+<h1>Software Tester/QA Analyst</h1>: Testing software applications for bugs and issues.
+ <p>Salary range</p>: $35,000 - $60,000.
+
+<h1>Database Administrator</h1>: Managing and organizing databases.
+ <p>Salary range: $45,000 - $75,000.</p>
+
+<h1>IT Support Specialist</h1>
+: Providing technical support for IT systems.
+ <p> range: $35,000 - $55,000.</p>
+
+<h1>System Administrator</h1>
+: Managing and maintaining computer systems and servers. 
+<p>Salary range: $45,000 - $70,000.</p>
+
+<h1>Technical Writer</h1>: Creating documentation and manuals for software and systems. 
+<p>Salary range: $40,000 - $65,000.</p>
+
+<h1>Computer Programmer</h1>: Writing code for software applications. 
+<p>Salary range: $45,000 - $75,000.</p>
+<h1>Mobile App Developer</h1>: Creating applications for mobile devices. 
+<p>Salary range: $50,000 - $80,000.</p>
+  </p>
+    </p>
+    </div>
+    <div class="job-opportunities" id="ece-jobs">
+        <!-- Display ECE job opportunities here -->
+    </div>
+    <div class="job-opportunities" id="eee-jobs">
+        <!-- Display EEE job opportunities here -->
+    </div>
+    <div class="job-opportunities" id="ai-ml-jobs">
+        <!-- Display AI & ML job opportunities here -->
+    </div>
+    <script>
+        const courseButtons = document.querySelectorAll('.course-button');
+const jobOpportunitySections = document.querySelectorAll('.job-opportunities');
+
+courseButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        jobOpportunitySections.forEach(section => {
+            section.style.display = 'none';
+        });
+        jobOpportunitySections[index].style.display = 'block';
+    });
+});
+    </script>
+</body>
+</html>

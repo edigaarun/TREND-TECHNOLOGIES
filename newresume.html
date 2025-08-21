@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+    
+    *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+.form{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.side_bar {
+	width: 20%;
+	height: 100vh;
+	background: rgba(112, 112, 112, 0.1);
+	padding-top: 30px;
+}	
+.screen{
+	width: 80%;
+	height: 100vh;
+	display: flex;
+}
+.header{
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+}
+#left i{
+	border-radius: 50%;
+	border: 2px solid #111;
+	font-size: 20px;
+	padding: 10px;
+}
+#right p{
+	font-size: 35px;	
+	font-weight: 500;
+	text-align: center;
+}
+.list{
+	padding: 5rem 20px;
+}
+.list ul{
+	display: flex;
+	flex-direction: column;
+	
+}
+.list li {
+	list-style: none;
+	margin: 5px 0;
+	background: rgba(112, 112, 112, 0.2);
+	padding: 12px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.list li span{
+	margin-right: 15px;
+}
+.list li a {
+	text-decoration: none;
+	color: #111;
+	display: inline-block;
+	height: 30px;
+	width: 80%;
+	padding-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+.first_part{
+	width: 55%;
+}
+.second_part{
+	width: 45%;
+}
+.form1{
+	display:none;	
+}
+.form2{
+	display:none;	
+}
+.form3{
+	display: none;
+}
+.form4{
+	display:none;	
+}
+.form5{
+	display:none;
+}
+
+
+
+
+.form1 h2{
+	color: rgba(63, 84, 200, 0.84);
+	padding-top: 12rem;
+	text-align: center;
+}
+.form1 p{
+	color: rgba(63, 84, 200, 0.84);
+	padding-top: 50px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.form1 img {
+	width: 40%;
+	margin-left: 30%;
+	height: 300px;
+	opacity: 0.7;
+}
+.form2_form{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	margin: 0 30px;
+	padding-top: 9rem ;
+	position: relative;
+}
+#file {
+	margin: 0 auto;
+	z-index: 2;
+}
+.form2 .photo-label{
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: url(profile.jpg);
+	background-size: cover;
+}
+ .photo-label input[type=file]{
+	opacity: 0;
+}
+.form2 label{
+	font-size: 20px;
+}
+#title{
+	margin: 20px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#role select {
+	padding: 15px 15px 15px 15px;
+	border-radius: 25px;
+	border: none;
+	cursor: pointer;
+}
+#role {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 60%;
+}
+#exp {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+	justify-content: space-between;
+	width: 71%;
+}
+
+#exp span{
+	font-size: 20px;
+}
+#name {
+	padding: 10px 0px 10px 5px;
+	font-size: 18px;
+	width: 410px;
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+}
+#age {
+	padding: 10px 0px 10px 5px;
+	font-size: 18px;
+	width: 160px;
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+}
+.fill{
+	position: absolute;
+	top: 50px;
+	right: 30px;
+}
+
+/*   for background color cancle or submit */
+.fill input {
+	background: white;
+	border: none;
+	padding: 15px 25px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+.fill input:hover{
+	background: lightgrey;
+}
+
+/*     End */
+
+.active{
+	display: block;
+}
+
+.form3_form {
+	display: flex;
+	padding-top: 150px;
+	padding-left: 50px;
+	position: relative;
+	/* align-items: center; */
+	/* flex-direction: column; */
+}
+.form3_form .About_me_label {
+    width: 20%;
+    font-size: 20px;
+    margin-right: 5%;
+}
+.textarea {
+	width: 75%;
+}
+.form3_form .textarea textarea {
+	border-radius: 3px;
+	resize: none;
+	border: 2px solid lightgrey;
+	width: 95%;
+	height: 200px;
+}
+.form3_form .textarea input {
+	border-radius: 3px;
+	height: 40px;
+	width: 85%;
+	border: 2px solid lightgrey;
+	margin-top: 20px;
+}
+.form3_form .textarea span {
+	margin-left: 15px;
+	border: 2px solid lightgrey;
+	border-radius: 50%;
+	padding: 6px 8px;
+	cursor: pointer;
+}
+
+
+.details_div{
+	display: flex;
+}
+
+/*Rightpart css start from here */
+
+.screen{
+	display: flex;
+}
+.second_part {
+	border-left: 1px solid lightgrey;
+	padding: 2rem;
+}
+.second_part_heading {
+	display: flex;	
+	align-items: center;
+	margin-bottom: 20px;
+}
+.second_part_heading #left_image {
+	border-radius: 50%;
+	overflow: hidden;
+	border: 1px solid lightgrey;
+	width: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 30px;
+}
+.heading_right_span p {
+	margin: 15px 0;
+}
+.heading_right_span h2{
+	color:rgba(63, 84, 200, 0.84);
+}
+.right_body{
+	display: flex;
+	height: 60vh;
+}
+.first_column{
+	width: 49%;
+	margin-right: 1%;
+	display: flex;
+	flex-direction: column;
+}
+.Aboutme{
+	height: 50%;
+}
+.Skills{
+	height: 40%;
+}
+.Certification{
+	height: 10%;
+}
+.second_column {
+	width: 49%;
+	margin-left: 1%;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-between; */
+}
+.Work{
+	height: 90%;
+}
+.Eductional{
+	height: 10%;
+}
+
+/*.Work , .Skills , .Certification , .Eductional , .Aboutme{
+	width: 47%;
+	margin-bottom: 20px;
+}*/
+.Skills h3 , .Work h3 , .Certification h3 , .Eductional h3 , .Aboutme h3{
+	width: 100%;
+	border-bottom: 3px solid lightblue;
+	color: rgba(63, 84, 200, 0.84);
+	position: relative;
+	padding-bottom: 4px;
+}
+
+.Skills h3::before, .Work h3::before, .Certification h3::before, .Eductional h3::before, .Aboutme h3::before {
+	position: absolute;
+	content: "";
+	bottom: -3px;
+	left: 0;
+	width: 15%;
+	border: 2px solid blue;
+}
+
+.Skills p , .Work p , .Certification p , .Eductional p , .Aboutme p{
+	margin-top: 10px ;
+}
+
+
+
+/*form4 css start from here*/
+
+
+header{
+	 padding-top: 5rem;
+}
+
+#skillPart {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#skillPart .bottomPart {
+    display: flex;
+    align-items: center;   
+}
+
+#skillPart .bottomPart .second_BTN {
+    border-radius: 22px;
+    border: 2px solid #b8b3b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 0;
+    width: 12rem;
+    margin: 0 0.5rem;
+}
+#skillPart .bottomPart .title{
+    margin-right: 2rem;
+    font-size: 1.2rem;
+}
+
+
+#skillPart .bottomPart .first_BTN span:first-of-type {
+    margin-right: 1.5rem;
+}
+#skillPart .bottomPart .second_BTN span:first-of-type{
+    margin-right: 2.5rem;
+}
+#skillPart .search_BTN{
+    border-radius: 22px;
+    border: 2px solid #b8b3b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    padding: 0.8rem 0;
+    margin: 2rem 0 1rem 0;
+}
+#skillPart .search_BTN span:first-of-type{
+    margin-right: 80px;
+}
+
+#skillPart table{
+    width: 100%;
+    height: 2rem;
+    border: 1px solid #b8b3b3;
+    border-collapse: collapse;
+}
+#skillPart table thead{
+    background: #b8b3b3;
+    height: 3rem;
+    font-weight: 700;
+}
+#skillPart table thead td{
+    padding-left: 10px;
+    
+}
+#skillPart table tbody td{
+    border: 1px solid #b8b3b3;
+    height: 3rem;
+    padding-left: 10px;
+}
+#skillPart table tbody i{
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 0.3rem;
+    
+}
+#skillPart table tbody tr td:first-of-type{
+    text-align: center;
+}
+#skillPart table tbody button{
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+/*loan form css*/
+
+
+.rightpart_top {
+    padding: 15px;
+    text-align: right;
+    margin-right: 35px;
+}
+
+/*   for background color cancle or submit */
+.rightpart_top input {
+    background-color:white;
+    border: none;
+    padding: 15px 25px;
+    margin: 0 5px;
+    border-radius: 25px;
+}
+.rightpart_top input:hover{
+  background-color:lightgray;
+}
+/*     End */
+.rightpart_bottom {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+}
+.input_add {
+    padding: 15px;
+    text-align: right;
+}
+.rightpart_bottom textarea {
+    border: 1px solid darkgray;
+    margin-right: 25px;
+    resize: none;
+}
+.input_add input {
+    width: 61%;
+    height: 50px;
+    border: 1px solid darkgray;
+}
+.input_add a{
+	text-decoration: none;
+}
+.input_add i {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+.rightpart_bottom i {
+    margin-left: 10px;
+    color: lightgray;
+    font-size: 13px;
+    background: #000;
+    padding: 5px;
+    /* border-radius: 50%; */
+}
+
+/*css for work experience page*/
+
+.rightpart_main{
+    padding: 0 30px;
+}
+.heading{
+    display: flex;
+    margin-bottom: 27px;
+}
+.heading i {
+	margin-left: 60px;
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.heading h4{
+    width: 5%;
+}
+
+.r_1{
+    margin-bottom: 15px;
+}
+.r_1 input{
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+    margin-left: 55px;
+    border: 2px solid lightgray;
+}
+.r_2{
+    margin-bottom: 15px;
+}
+.r_2 input{
+    width: 70%;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 116px;
+    border: 2px solid lightgray;
+}
+.r_3{
+    margin-bottom: 15px;
+}
+.r_3 input{
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+    margin-left: 78px;
+    border: 2px solid lightgray;
+    
+}
+.r_4{
+    margin-bottom: 15px;
+}
+.r_4 select {
+	border: 1px solid lightgray;
+	width: 22%;
+	padding-left: 10px;
+	border-radius: 20px;
+	height: 40px;
+	margin-left: 140px;
+}
+.r_5{
+    margin-bottom: 15px;
+}
+.r_5 input{
+    border-radius: 5px;
+    width: 22%;
+    padding: 10px;
+    height: 40px;
+    margin-left: 110px;
+    border: 2px solid lightgray;
+}
+.r_6 {
+    margin-bottom: 15px;
+}
+.r_6 input{
+    border-radius: 5px;
+    padding-bottom:60px; 
+    padding-left: 15px;
+    height: 100px;
+    width: 70%;
+    margin-left: 50px;
+    border: 2px solid lightgray;
+}
+.r_7{
+    margin-bottom: 15px;
+}
+.r_7 select {
+	border: 1px solid lightgrey;
+	width: 22%;
+	height: 40px;
+	padding-left: 10px;
+	border-radius: 20px;
+	padding-bottom: 0 10px;
+	margin-left: 40px;
+}
+.r_8 input{
+    width: 64%;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 56px;
+    margin-bottom: 12px;
+    border: 2px solid lightgray;
+}
+.r_8 .responsible{
+    margin-left: 26%;
+}
+.r_8 i {
+	margin-left: 5px;
+	border: 1px solid lightgrey;
+	border-radius: 50%;
+	padding: 10px;
+	cursor: pointer;
+}
+.r_8{
+    margin-bottom: 30px;
+}
+.r_9{
+    margin-bottom: 15px;
+}
+.r_10 button{
+    width: 30%;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid lightgray;
+}
+.r_10 i{
+
+    padding: 0 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.heighlight{
+	background-color: rgba(20, 20, 20, 0.5);
+}
+
+
+</style>	<link rel="stylesheet" type="text/css" href="rmaker.css">
+	<title></title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<div class="form">
+				<div class="side_bar">
+					<div class="header">
+						<div id="left">
+							<i class="fa-solid fa-arrow-left"></i>
+						</div>
+						<div id="right">
+							<p>Resume Builder</p>
+						</div>
+					</div>
+					<div class="list">
+						<ul>
+							<li data-id="form2"><span><i class="fa-solid fa-address-card"></i></span><a href="">My details</a></li>
+							<li data-id="form3"><span><i class="fa-solid fa-address-card"></i></span><a href="">About Me</a></li>
+							<li data-id="form4"><span><i class="fa-solid fa-ellipsis-vertical"></i></span><a href="">Skills & Professions</a></li>
+							<li data-id="form5"><span><i class="fa-solid fa-briefcase"></i></span><a href="">Work Experince</a></li>
+							<li data-id="form6"><span><i class="fa-solid fa-graduation-cap"></i></span><a href="">Educational Background</a></li>
+							<li data-id="form7"><span><i class="fa-solid fa-trophy"></i></span><a href="">Achievements</a></li>
+							<li data-id="form8"><span><i class="fa-solid fa-triangle-exclamation"></i></span><a href="">Membership</a></li>
+						</ul>
+					</div>	
+				</div>
+				<div class="screen">
+					<div class="first_part">
+						<div class="form1 search active">
+							<h2>EASY TO CREATE YOUR RESUME</h2>
+							<p> ← Click on left side to create Resume</p>
+							<img src="resume.jfif">
+						</div>
+						<div class="form2 search" data-id="form2">
+							<div class="form2_form">
+								<div id="file">
+									<label class="photo-label">
+										<img id="uploadPreview" style="width: 100%; height: 100%; border-radius:50%; border:transparent;" />
+										<input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+
+									</label>
+								</div>
+								<div id="title">	
+									<label>Name</label>
+									<input type="text" name="name" value="" id="name" placeholder="Enter your Name">
+								</div>
+								<div id="role">	
+									<label>Role</label>
+									<select class="select1">
+										<option>Product Owner</option>
+										<option>Business Analyst</option>
+										<option>Business manager</option>
+										<option>Employ</option>
+										<option>Tech Team</option>
+									</select>	
+								</div>
+								<div id="exp">	
+									<label> Total Exp</label>
+									<span><input type="text" name="age" value="" id="age" placeholder="Your Exp">&nbsp;&nbsp;&nbsp;&nbsp;	Years</span>
+								</div>
+								<div class="fill">
+									<input type="reset" value="Reset" class="reset" id="reset1">
+									<input type="submit" value="Submit" class="submit" id="submit1">
+								</div>	
+							</div><!-- form2_form tag -->	
+						</div><!-- form2 tag -->
+						<div class="form3 search" data-id="form3">
+							<div class="form3_form">
+								<div class="About_me_label">
+									<label>About Me</label>
+								</div>
+								<div class="textarea">
+									<textarea id="textarea"></textarea>
+									<input type="text" name="text" class="About_me_input" ><span><i class="fa-solid fa-plus"></i></span>
+								</div>	
+								<div class="fill">
+									<input type="reset" value="Reset" class="reset" id="reset2">
+									<input type="submit" value="Submit" class="submit" id="submit2">
+								</div>
+							</div>	
+						</div>
+						<div class="form4 search" data-id="form4">
+							<div id="skillPart">
+									<div class="fill">
+											<input type="reset" value="Reset" class="reset" id="reset3">
+											<input type="submit" value="Submit" class="submit" id="submit3">
+									</div>
+                                    <header>    
+                                    	<div class="bottomPart">
+                                        	<p class="title">Skill & <br>Proficiencies</p>
+                                      	</div>
+                                      	<p class="search_BTN">
+                                        <span>Search</span>
+                                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                                      	</p>
+                                    </header>
+                                    <table class="dataTable">
+                                      <thead>
+                                        <tr>
+                                          <td>Select</td>
+                                          <td>Category <i class="fa-solid fa-filter" style="margin-left: 20%;"></i></td>
+                                          <td>Skill <i class="fa-solid fa-filter" style="margin-left: 20%;"></i></td>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>
+                                          	<button class="button"><i class="fa-solid fa-check"></i></button>
+                                          </td>
+                                          <td class="first">Business Analysis</td>
+                                          <td class="second">Agile</td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="button"><i class="fa-solid fa-check"></i></button></td>
+                                          <td class="first">Business Analysis</td>
+                                          <td class="second">Business Requirement Doc</td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="button"><i class="fa-solid fa-check"></i></button></td>
+                                          <td class="first">Business Analysis</td>
+                                          <td class="second">Flow Diagrams</td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="button"><i class="fa-solid fa-check"></i></button></td>
+                                          <td class="first">Business Analysis</td>
+                                          <td class="second">Wireframe</td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="button"><i class="fa-solid fa-check"></i></button></td>
+                                          <td class="first">Business Analysis</td>
+                                          <td class="second">Other</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                            </div>
+						</div>
+						<div class="form5 search" data-id="form5">
+							<div class="r1">
+								<div class="rightpart_top">
+									<input type="reset" name="Cancel" value="Cancel" id="reset4">
+									<input type="submit" name="Submit" value="Submit" id="submit4">
+								</div>
+								<div class="rightpart_main">
+									<div class="heading">
+										<h4>Work Experience</h4>
+										<i class="fa-solid fa-circle-info"></i>
+									</div>
+
+									<div class="r_1">
+										<label>Clint Description</label>
+										<input type="text" name="">	
+									</div>
+		
+									<div class="r_2">
+										<label>Country</label>
+										<input type="text" name="">
+									</div>
+									<div class="r_3">
+										<label>Project Name</label>
+										<input type="text" name="">
+									</div>
+
+									<div class="r_4">
+										<label>Role</label>
+										<select class="role">
+											<option value="Product Onwer">								Product Onwer</option>
+											<option value="Business Analyst">
+													Business Analyst</option>
+											<option value="Product Supplier">							Product Supplier</option>
+											<option value="Buisness Management">						Buisness Management</option>
+											<option value="Buisness Growth">							Buisness Growth</option>
+										</select>
+									</div>
+									<div class="r_5">
+										<label>Duration</label>
+										<input type="date" name="">
+										<input type="date" name="">
+									</div>
+						
+									<div class="r_6">
+										<label>Buisness Solution</label>
+										<input type="" name="" placeholder="Discribe buisness Solution here">
+									</div>
+
+									<div class="r_7">
+										<label>Techonology Stack</label>
+										<select class="stack">
+											<option value="Phython">Phython</option>
+											<option value="Php Devloper">Php Devloper</option>
+											<option value="Php Desighner">Php Desighner</option>
+											<option value="Devloper">Devloper</option>
+											<option value="Java Devloper">Java Devloper</option>
+											<option value="Full stack">Full stack</option>
+										</select>
+									</div>
+									<div class="r_8">
+										<label>Responcebalities</label>
+										<input type="" name="">
+										<i class="fa-solid fa-plus plus_sign"></i>
+									</div>
+
+									<hr class="r_9" width="97%">
+
+									<div class="r_10">
+										<button class="hidebutton"><i class="fa-solid fa-plus"></i>Add Work Exprience</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="second_part">
+						<div class="second_part_heading">
+							<span id="left_image">
+								<!-- <i class="fa-solid fa-user"></i> -->
+								<img src ="profile.jfif" id="duplicate_img" style="width: 150px; height: 150px;">
+							</span>	
+							<span class="heading_right_span">
+								<h2>Your Name</h2>
+								<p id="role_para1">Role</p>
+								<p id="Exp_para">Total Exp</p>
+							</span>
+						</div>
+						<div class="right_body">
+							<div class="first_column">	
+								<div class="Aboutme ">
+									<h3>About Me</h3>
+									<p></p>
+								</div>
+								<div class="Skills">
+									<h3>Skills</h3>
+									<ul></ul>
+								</div>
+								<div class="Certification">
+									<h3>Certification</h3>
+									<p> </p>
+								</div>
+							</div>
+							<div class="second_column">
+								<div class="Work tab">
+									<h3>Work</h3>
+								</div>	
+								<div class="Eductional">
+									<h3>Eductional</h3>
+									<p></p>
+								</div>
+							</div>	
+
+ 						</div>
+					</div>
+				</div>
+			</div>	
+		</div><!-- container tag -->
+	</div><!-- wrapper tag -->
+	<script>
+        
+// "all li function"// "all li function"
+// "all li function"// "all li function"
+
+
+
+let All_li 			= document.querySelectorAll("li");
+let form   			= document.querySelectorAll(".search");
+
+All_li.forEach((current)=>{
+	current.onclick = (i)=>{
+		i.preventDefault();
+		let data = current.getAttribute("data-id");
+		
+		form.forEach((current)=>{
+			current.classList.remove("active")
+			if(current.getAttribute("data-id")==data){
+				current.classList.add("active");
+			}
+			
+		});
+			
+	}
+});
+
+// first form function
+// first form function// first form function
+
+
+let submit1 		= document.querySelector("#submit1");
+let reset1 			= document.querySelector("#reset1");
+let jsname 			= document.querySelector("#name");
+let option1 		= document.querySelectorAll(".select1 option");
+let array1			= [];
+let exp 			= document.querySelector("#age");
+let rolepara		= document.querySelector("#role_para1")
+let image 			= document.querySelector("#uploadPreview");
+
+function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+submit1.onclick= () =>{
+	mydetail_js();
+	img();
+	rolepara.innerHTML = array1.join("|");
+}
+
+
+function mydetail_js() {
+	if( jsname.value == ""){
+		alert("Insert your Name")
+	}
+	else if( exp.value == ""){
+		alert("Insert your Exp")
+	}
+	else{	
+	document.querySelector(".heading_right_span h2").innerHTML = jsname.value
+	document.querySelector("#Exp_para").innerHTML += " | " + exp.value + " Years"
+	submit1.style.opacity = "0";
+	}
+}
+
+
+function img(){
+	document.querySelector("#duplicate_img").src = image.src;
+}
+
+
+option1.forEach((current)=>{
+	current.onclick = ()=>{
+		array1.push(current.value);
+		current.style.cssText = "display:none";
+	}
+
+});
+
+
+reset1.onclick= () =>{
+	jsname.value = null;
+	exp.value = null;	
+	document.querySelector("#duplicate_img").src="profile.jpg";
+	document.querySelector("#Exp_para").innerHTML = "Exp" ;
+	document.querySelector(".heading_right_span h2").innerHTML = "Name" ;
+	submit1.style.opacity = "1";
+	image.src="";
+	rolepara.innerHTML = "Role";
+	option1.forEach((current)=>{
+	current.style.cssText = "display:block"
+	});
+	array1 = [];
+
+}
+
+
+// form2 js start from here
+// form2 js start from here
+
+
+
+let reset2 = document.querySelector("#reset2");
+let submit2 = document.querySelector("#submit2");
+let plus_icon = document.querySelector(".textarea i");
+let span = document.querySelector(".textarea span");
+let about_input = document.querySelectorAll(".About_me_input");
+
+
+submit2.onclick= () =>{
+	let aboutme = document.querySelector(".Aboutme")
+	let p = document.querySelector(".Aboutme p")
+	let ul = document.createElement("ul")
+		// aboutme.appendChild(p)
+		aboutme.appendChild(ul)
+		p.innerHTML = textarea.value
+		textarea.value = "";
+	about_input.forEach((current) =>{
+		if(current.value != ""){
+		let li = document.createElement("li")
+		ul.appendChild(li)
+		li.innerHTML = current.value
+		current.value = ""
+		}
+	})
+	let del = document.querySelectorAll(".about_me_appended_input")
+	del.forEach((current) =>{
+		current.remove();
+	})
+	submit2.disabled = true 	
+}
+reset2.onclick=()=>{
+	let p = document.querySelector(".Aboutme p");
+	p.innerHTML = "";
+	// p.remove();
+	let ul = document.querySelector(".Aboutme ul")
+	ul.remove();
+	submit2.disabled = false;
+	
+}
+plus_icon.onclick = () =>{
+	let newInput2 = document.createElement("input")
+	// newInput2.setAttribute("class","about_me_appended_input")	
+	newInput2.setAttribute("class","About_me_input about_me_appended_input")
+	span.insertAdjacentElement("beforebegin",newInput2);
+	about_input = document.querySelectorAll(".About_me_input");
+}
+
+// form3 js start from here
+// form3 js start from here
+
+let button = document.querySelectorAll(".button");
+let submit3 = document.querySelector("#submit3");
+let reset3 = document.querySelector("#reset3");
+let text = [];
+let abc = [];
+let i  = 0;
+let skill = document.querySelectorAll(".skill_li");
+
+button.forEach((current) =>{
+	current.onclick = ()=>{
+		let tex = current.parentElement.nextElementSibling.innerHTML;
+		let ab = current.parentElement.nextElementSibling.nextElementSibling.innerHTML;
+		abc.push(tex);
+		abc.push(ab);
+		let ul_skill = document.querySelector(".Skills ul");
+		let li_append = document.createElement("li"); 
+ 		li_append.setAttribute("class","skill_li");
+ 		li_append.style.cssText = "margin-top:5px;"
+ 		ul_skill.appendChild(li_append);
+ 		let li1_append = document.createElement("li"); 
+ 		li1_append.setAttribute("class","skill_li");
+ 		li1_append.style.cssText = "margin-top:5px;"
+ 		ul_skill.appendChild(li1_append);
+		skill = document.querySelectorAll(".skill_li"); 							
+		document.querySelector(".Skills ul").style.display = "none";
+		current.disabled = true;
+	}
+})
+submit3.onclick= ()=>{
+	document.querySelector(".Skills ul").style.display = "block";
+	skill.forEach((current) =>{
+	 current.innerHTML = abc[i]
+	 i++
+	})
+	button.forEach((current) =>{
+		current.disabled = true
+	})
+	submit3.disabled = true	
+}
+reset3.onclick = ()=>{
+	submit3.disabled = false
+	button.forEach((current) =>{
+		current.disabled = false
+	})	
+	skill.forEach((current) =>{
+	 current.remove();
+	})
+}
+
+
+
+// form4 function start from here
+// form4 function start from here
+
+let submit4 		= document.querySelector("#submit4");
+let reset4 			= document.querySelector("#reset4");
+let tab 			= document.querySelector(".tab");
+let plus_sign 		= document.querySelector(".plus_sign");
+let button_div 		= document.querySelector(".r_10 button");
+let countery_div 	= document.createElement("div");
+let para5 			=  document.createElement("p");
+let para6 			=  document.createElement("p");
+let para7 			=  document.createElement("p");
+let para9 			= document.createElement("p");	
+let work_ul			= document.createElement("ul");
+let work_li 		= document.createElement("li");
+let option4 		=document.querySelectorAll(".role option");
+let option7 		=document.querySelectorAll(".stack option");
+let array			=[];
+let array2			=[];
+let role_h5			= document.createElement("h5");
+let role_h7			= document.createElement("h5");
+
+submit4.onclick=()=>{
+	work();	
+}    
+
+function work(){
+
+	if(document.querySelector(".r_1 input").value.length == 0){
+		document.querySelector(".r_1 input").value = "";
+	}
+	else{	
+	tab.appendChild(countery_div);
+	countery_div.style.cssText = "display:flex; align-items:center; justify-content:space-between;";
+	countery_div.appendChild(para5);
+	 para5.innerHTML += "Clint:" + "&nbsp;" + document.querySelector(".r_1 input").value;
+	 document.querySelector(".r_1 input").value = "";
+	}
+
+
+
+
+
+	if(document.querySelector(".r_2 input").value.length == 0){
+		document.querySelector(".r_2 input").value = "";
+	}
+	else{
+	countery_div.appendChild(para6);
+	let flag_icon = document.createElement("i");
+	flag_icon.setAttribute("class", "fa-solid fa-flag");
+	para6.appendChild(flag_icon);
+	 para6.innerHTML += "&nbsp;" + document.querySelector(".r_2 input").value;
+	 document.querySelector(".r_2 input").value = "";
+	}
+	
+
+
+
+
+	if(document.querySelector(".r_3 input").value.length == 0){
+		document.querySelector(".r_3 input").value = "";
+	}
+	else{
+	tab.appendChild(para7);
+	 para7.innerHTML += "Project:" + "&nbsp;" + document.querySelector(".r_3 input").value;
+	 document.querySelector(".r_3 input").value = "";
+	}
+	
+
+	if(array.length==0){
+		role_h5.innerHTML = "";
+	}
+	else{
+		tab.appendChild(role_h5);
+		role_h5.innerHTML = "Role:  " + array.join(" , ");
+		role_h5.style.cssText = "margin-top:10px;";
+	}
+	
+
+// yaha par date ki js aayegi
+// yaha par date ki js aayegi
+// yaha par date ki js aayegi
+// yaha par date ki js aayegi
+
+
+
+	if(document.querySelector(".r_6 input").value.length ==0){
+		document.querySelector(".r_6 input").value = "";
+	}
+	else{
+	tab.appendChild(para9);
+	para9.innerHTML = "Business Solution:" + " " + document.querySelector(".r_6 input").value;
+	document.querySelector(".r_6 input").value = "";	
+	}
+
+	
+	if(array2.length==0){
+		role_h7.innerHTML = "";
+	}
+	else{
+		tab.appendChild(role_h7);
+		role_h7.innerHTML = "Techonology Stack:  " + array2.join(" , ");
+		role_h7.style.cssText = "margin-top:10px;";
+	}
+
+
+
+	if(document.querySelector(".r_8 input").value.length ==0){
+		document.querySelector(".r_8 input").value="";
+	}
+	else{		
+	tab.appendChild(work_ul);
+	work_ul.appendChild(work_li);
+	work_li.style.cssText = "margin-top:10px";
+	(work_li).innerHTML=document.querySelector(".r_8 input").value
+	}
+
+};
+
+
+
+option4.forEach((current)=>{
+	current.onclick = ()=>{
+		array.push(current.value);
+		current.style.cssText = "display:none";
+	}
+});
+
+option7.forEach((current)=>{
+	current.onclick = ()=>{
+		array2.push(current.value);
+		console.log(array2);
+		current.style.cssText = "display:none";
+	}
+});
+
+
+plus_sign.onclick = ()=>{
+	let newInput3 = document.createElement("input");
+	plus_sign.insertAdjacentElement("beforebegin",newInput3);
+};
+
+
+button_div.onclick = ()=>{
+	let Right_part = document.querySelector(".rightpart_main");
+	let newdiv = document.createElement("div");
+	document.querySelector(".r1").appendChild(newdiv);
+	newdiv.setAttribute("class", "rightpart_main");
+	(newdiv).innerHTML = (Right_part).innerHTML;
+	document.querySelector(".r_10 button").style.cssText = "opacity:0";
+};
+
+reset4.onclick = ()=>{
+	document.querySelector(".r_1 input").value = "";
+	document.querySelector(".r_2 input").value = "";
+	document.querySelector(".r_3 input").value = "";
+	document.querySelector(".r_8 input").value= "";
+	para5.innerHTML = "";
+	para6.innerHTML = "";
+	para7.innerHTML = "";
+	para9.innerHTML = "";
+	work_ul.innerHTML = "";
+	work_li.innerHTML = "";
+	role_h5.innerHTML="";
+	role_h7.innerHTML="";
+	para5.remove();
+	para6.remove();
+	para7.remove();
+	para9.remove();
+	work_ul.remove();
+	work_li.remove();
+	option4.forEach((current)=>{
+		current.style.cssText = "display:block";
+	})
+	option7.forEach((current)=>{
+		current.style.cssText = "display:block";
+	})
+	array = [];
+	array2 = [];
+}
+
+    </script>
+</body>
+</html>

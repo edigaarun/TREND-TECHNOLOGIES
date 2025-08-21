@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="france">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMN</title>
+    
+    
+  <style>
+    
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family: 'Roboto';
+  line-height:1.4;
+}
+
+.container{
+  max-width: 960px;
+  margin:auto;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0 3rem;
+}
+
+.showcase{
+ background-color:rgba(208, 0, 0, 0.45);
+  color: rgb(20, 15, 15);
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.showcase-inner{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.showcase h1{
+    font-size: 4rem;
+}
+
+.showcase p{
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+}
+
+.btn{
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    color: rgb(5, 5, 4);
+    border-radius: 3px;
+    letter-spacing: 1.9px;
+    background-color: rgb(35, 478, 55);
+    font-weight: 800;
+    box-shadow: 0px 0px 7px rgb(207, 194, 120);
+    padding: 10px 20px;
+    transition: opacity 200ms ease-in, font-size 200ms ease-out;
+}
+
+.btn:hover{
+    opacity: 0.7;
+    font-size: 17px;
+}
+
+.menu-wrap{
+    position: flex;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.menu-wrap .toggler{
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger{
+    position:fixed ;
+    top: 0;
+    left:8;
+    z-index: 1;
+    padding: 1rem;
+    width: 40px;
+    height: 40px;
+    background-color:rgba(28, 272, 24, 0.9);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
+}
+
+/*hamburger middle line */
+
+.menu-wrap .hamburger > div{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(seagreen12, 12);
+    transition: transform 0.4s ease;
+}
+
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+
+.menu-wrap .hamburger > div::after{
+    top: 10px;
+}
+
+
+.menu-wrap .toggler:checked + .hamburger>div{
+    transform: rotate(135deg);
+}
+
+/*turns line into X */
+.menu-wrap .toggler:checked + .hamburger>div::before,
+.menu-wrap .toggler:checked + .hamburger>div::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate on hover when checked*/
+.menu-wrap .toggler:checked:hover + .hamburger>div{
+    transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu{
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu> div{
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.menu-wrap .toggler:checked ~ .menu> div > div{
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    justify-content: center;
+}
+
+.menu-wrap .menu>div{
+    background-color: rgba(50, 89, 88, 0.8);
+    width: 200vw;
+    height: 200vw;
+    overflow: hidden;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div{
+    max-width: 90vw;
+    max-height: 100vh;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li{
+    list-style: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.4s ease;
+}
+    /* CSS styles go here */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      background: url("bg3.jfif") no-repeat center center fixed;
+      background-size: cover;
+    }
+  
+        header {
+            background-color: #464646;
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+        }
+        .slider-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+            20% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-100%);
+            }
+            45% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-200%);
+            }
+            70% {
+                transform: translateX(-200%);
+            }
+            75% {
+                transform: translateX(-300%);
+            }
+            95% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+._
+._ .navbar {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px  7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: right;
+      width: 100%;
+      top: 1;
+      position: absolute;
+      margin-bottom: 2rem;
+    }
+    
+
+    .navbar .logo {
+      flex-grow: 1;
+      text-align: right;
+   
+
+    }
+
+    .navbar .logo img {
+      max-width: 50px;
+      justify-content: none;
+    
+    }
+    .navbar .logoamn {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .navbar .logoamn img {
+      max-width: 50px;
+      justify-content: none;
+    
+    }
+    .navbar .logo a .loo-link{
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content:right;
+    }
+    .navbar li {
+      margin-right: 20px;
+    }
+
+    .navbar li:last-child {
+      margin-right: 0;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    
+
+
+    .container {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    background: #323e3e
+    }
+
+    h1 {
+      color: #c5f4fa;
+      font-size: 40px;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    p {
+      color: #8df38582;
+      font-size: 17px;
+      line-height: 1.0;
+      margin-top: 17px;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    pre{
+      color: #e6f205;
+      font-size: 40px;
+      margin-top: 50px;
+      text-align: center;
+
+    }
+
+    .cta-button {
+      margin-top: 30px;
+    }
+
+    .cta-button a {
+      display: inline-block;
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 10px 20px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .cta-button a:hover {
+      background-color: #0056b3;
+    }
+
+    .contact-section {
+      margin-top: 60px;
+    }
+
+    .contact-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .contact-form label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .contact-form input[type="submit"] {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .contact-form input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .image-section {
+      display: flex;
+      justify-content: space-around;
+      margin-top:  10px 5%;
+      padding: 50px 50px;
+
+      width:100%;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+
+
+    }
+
+    .image-section img {
+      height: 300px;
+      border-radius: 10%;
+      border: 10px solid #0b41e3;
+      
+      margin-bottom: 20px;
+    }
+    h2{
+      text-align: center;
+      color: antiquewhite;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="neons.html">ROAD MAPS</a></li>
+              <li><a href="aitools.html">AI TOOLS</a></li>
+              <li><a href="main_jobpage.html">JOB OPPURTUNITIES</a></li>
+              <li><a href="newresume.html">RESUMES</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+      <header>
+        
+    <div class="logo">
+        <a href="https://www.bing.com/ck/a?!&&p=959ad3498d910812JmltdHM9MTcyNjI3MjAwMCZpZ3VpZD0yMmI4ZDljMy0zNGM2LTZiZjAtMWE5Yi1jYmE0MzU2MDZhYjcmaW5zaWQ9NTIzMA&ptn=3&ver=2&hsh=3&fclid=22b8d9c3-34c6-6bf0-1a9b-cba435606ab7&psq=vvit+website&u=a1aHR0cHM6Ly93d3cudnZpdGd1bnR1ci5jb20v&ntb=1"target="_blank"class="logo">
+        <img src="vvit.jpg"" alt="vvit institute of technology">
+        </a>
+    </div>
+         
+        
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </header>
+      </div>
+    
+<div id="home"class="container">
+    <h1>Welcome to Latest Artificial Intelligence Technologies</h1>
+    <p>"Unleash the Power of Tech: Transforming Today, Shaping Tomorrow."<br>
+      "Redefine Possibilities: Technology at the Forefront of Progress."<br>
+      "Connect, Create, Innovate: The Evolution of Technology."<br>
+      "Tech Revolutions: Building a Smarter World Together." </p>
+    <div class="cta-button">
+      <a href="#contact">Contact Us</a>
+    </div>
+    </div>
+<p></p>
+<h1></h1>
+
+
+    <div class="slider-container">
+      <div class="slider" id="slider">
+          <div class="slide"><img src="amn1.jfif" alt="Image 1"></div>
+          <div class="slide"><img src="amn2.jfif" alt="Image 2"></div>
+          <div class="slide"><img src="amn3.jfif" alt="Image 3"></div>
+         
+
+      </div>
+  </div>
+  
+  <script>
+      const slider = document.getElementById('slider');
+      let slideIndex = 0;
+  
+      function nextSlide() {
+          slideIndex = (slideIndex + 1) % slider.childElementCount;
+          updateSlider();
+      }
+  
+      function updateSlider() {
+          slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+      }
+  
+      setInterval(nextSlide, 3000); // Change image every 3 seconds
+  </script>
+<div class="image-section">
+  <a href="AI1.html"><img src="AI.jfif" alt="AI"><h2 >ARTIFICIAL INTELLIGENCE</h2></a>
+  <a href="blockchain.html"><img src="new7.jfif" alt="blockchain"><h2>BLOCK CHAIN</h2></a>
+</div>
+  <div class="image-section">
+  <a href="main_dv.html"><img src="main_mvp.jfif" alt="METAVERSE"><h2>METAVERSE</h2></a>
+  <a href="main_ds.html"><img src="main_dsp.jfif" alt="data science"><h2>DATA SCIENCE</h2></a>
+  
+</div>
+
+  <div id="contact" class="container contact-section">
+    <h2>Contact Us</h2>
+    <p>Have any questions or want to know more? Get in touch with us!</p>
+    <form class="contact-form" action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <input type="submit" value="Send Message">
+    </form>
+  </div>
+  
+</body>
+
+</html>

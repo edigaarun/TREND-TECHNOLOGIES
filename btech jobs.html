@@ -1,0 +1,129 @@
+[11:51 pm, 14/09/2023] L CHARAN REDDY: btech jobs
+[11:51 pm, 14/09/2023] L CHARAN REDDY: <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(236, 230, 219);
+}
+
+.main {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+img{
+    border-radius: 10px;
+  
+}
+
+.job-opportunities {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+h1{
+    color: red;
+}
+h2{
+      text-align: center;
+      color: rgb(18, 247, 98);
+    }
+ 
+
+.main img {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: antiquewhite;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <button class="course-button" id="cse"><img src="job_cse.jfif" alt="main"><h2>CSE</h2></button>
+    <button class="course-button" id="ece"><img src="job_ece.jfif" alt="main"><h2>ece</h2></button>
+    <button class="course-button" id="eee"><img src="job_eee.jfif" alt="main"><h2>EEE</h2></button>
+    <button class="course-button" id="ai-ml"><img src="job_civil1.jfif" alt="main"><h2>civil</h2></button>
+</div>
+    <div class="job-opportunities" id="cse-jobs">
+        <!-- Display CSE job opportunities here -->
+       <h1>hello Welcome to cse job opportunities</h1>
+       <p>Job opportunities for individuals with a B.Tech in Computer Science and Engineering (CSE) can vary based on factors such as location, skills, and industry demand. Common roles could include computer support specialist, web developer, network technician, or software tester. Salaries will also vary depending on these factors and your experience level, but entry-level positions might range from $30,000 to $50,000 annually, with potential for growth as you gain experience and skills. Keep in mind that the job market and salary ranges can change over time, so it's always a good idea to research current trends and job listings in your area.
+  <p> 
+<h1> Full stack Web developer</h1>: build both frontend,Backend of website . 
+<P>Salary range</P>: $12,000 - $50,000.
+
+<h1>Software Developer/Engineer</h1>: To design, develop, and maintain software applications and systems.
+ <p>Salary range</p>: $50,000 - $80,000.
+
+<h1>Data Scientist</h1>: To analyze data, extract insights, and build predictive models..
+<p> Salary range</p>: $70,000 - $100,000.
+
+<h1>Web Developer
+</h1>:  To create and maintain websites and web applications.
+ <p>Salary range</p>: $45,000 - $75,000.
+
+<h1>Network Engineer</h1>: To design, implement, and manage computer networks..
+ <p>Salary range: $60,000 - $90,000.</p>
+
+<h1>Cybersecurity Analyst
+</h1>
+: To protect computer systems and data from cyber threats.
+ <p> range: $60,000 - $90,000.</p>
+
+<h1>Machine Learning Engineer
+</h1>
+: To develop machine learning models and algorithms. 
+<p>Salary range: $80,000 - $120,000.</p>
+
+<h1>Database Administrator
+</h1>: To manage and maintain databases . 
+<p>Salary range: $60,000 - $90,000.</p>
+
+<h1>Cloud Solutions Architect
+</h1>: To design and implement cloud-based solutions. 
+<p>Salary range: $80,000 - $120,000.</p>
+<h1>Software Quality Assurance (QA) Engineer
+</h1>: To ensure software quality through testing and quality control. . 
+<p>Salary range: $50,000 - $80,000.</p>
+  </p>
+    </p>
+    </div>
+    <div class="job-opportunities" id="ece-jobs">
+        <!-- Display ECE job opportunities here -->
+    </div>
+    <div class="job-opportunities" id="eee-jobs">
+        <!-- Display EEE job opportunities here -->
+    </div>
+    <div class="job-opportunities" id="ai-ml-jobs">
+        <!-- Display AI & ML job opportunities here -->
+    </div>
+    <script>
+        const courseButtons = document.querySelectorAll('.course-button');
+const jobOpportunitySections = document.querySelectorAll('.job-opportunities');
+
+courseButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        jobOpportunitySections.forEach(section => {
+            section.style.display = 'none';
+        });
+        jobOpportunitySections[index].style.display = 'block';
+    });
+});
+    </script>
+</body>
+</html>
